@@ -32,7 +32,7 @@ public class VideoController {
 
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE, consumes =  MediaType.APPLICATION_JSON_VALUE )
     @ResponseStatus(HttpStatus.CREATED) // return response code 201
-    public AddVideoResponse AddVideo(@RequestBody AddVideoRequest addVideoRequest) {
+    public AddVideoResponse addVideo(@RequestBody AddVideoRequest addVideoRequest) {
         Video video = videoService.addVideo(addVideoRequest.getMovieTitle());
         AddVideoResponse addVideoResponse = new AddVideoResponse();
         addVideoResponse.setVideo(video);
